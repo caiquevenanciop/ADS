@@ -38,8 +38,15 @@
 	
 <script>
 	function validaForm() {
-
-		return false;
+		valida=true;
+		email=document.getElementById('txtMail');
+		console.log(email.value)
+		if(email.value==''){
+			alert('Preencha o email!!')
+			valida= false;
+		}
+		
+		return valida;
 	}
 
 </script>
