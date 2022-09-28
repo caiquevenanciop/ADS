@@ -1,0 +1,133 @@
+		- Click (onclick)
+		<p onclick ="console.log('Clicou no elemento')">
+			2 Lorem ipsum dolor sit amet , consectetur adipiscing elit.3 		
+		</p>
+		
+		-load (onload) -Disparado após o carregamento de algum objeto/recurso 
+		 Esse atributo pode ser utilizado em diversos elementos HTML. Por exemplo: body, img, script e link.
+		<body onload =" console.log('carregou o body')">
+ 		</body>		 
+		
+		-scroll (onscroll)
+		Esse atributo pode ser utilizado em diversos elementos HTML. Por exemplo: body, section, div e textarea.
+		<body onscroll ="console.log('Usou o scroll')">
+		</body>		
+		
+		<textarea  id="txtTexto"  onresize ="console.log ('Alterou tamanho')"  rows="4" size="100" onscroll="console.log(' Usou scroll textarea')" >
+		</textarea>
+		
+		
+		-focus (onfocus) - Disparado quando o elemento passa a ter o focu do curso 
+		Esse atributo pode ser utilizado em diversos elementos HTML. Por exemplo: input, select e textarea
+		<input id="txtNome" type="text" onfocus ="console.log('Entrou no texto do nome')"/>
+		
+		
+		-change (onchange) - Disparado quando um elemento tem seu conteúdo alterado e perde o fuco
+		Esse atributo pode ser utilizado em diversos elementos HTML. Por exemplo: input, select e textarea.
+		<input id="txtEndereco" type="text" onchange ="console.log('Alterou conteúdo no endereço')"/>
+		
+		
+		-blur (onblur) - Disparado quando um elemento perde o focu 
+		Esse atributo pode ser utilizado em diversos elementos HTML. Por exemplo: input, select e textarea.
+		<input id="txtMail" type="text" onblur="console.log('Saiu do campo email')"/>		
+		
+		
+		-select (onselect) - Disparado quando o conteúdo presente no elemento é selecionado (input ou textarea) 
+		<input id="txtMail" type="text" onselect="console.log('Saiu do campo email')"/>	
+		
+		
+		-submit (onsubmit)
+		O evento submit é disparado imediatamente antes do envio de um formulário. 
+		<form id="formulario" action="index.html" onsubmit="alert('Antes de anviar')">
+		<form id="formulario" action="index.html" onsubmit="return validaForm()">
+		
+			function validateForm() {return true; }
+			
+	
+		-reset (onreset)
+		O evento reset é disparado quando um formulário é reiniciad
+		<form id="formulario" action="index.html" onsubmit="alert('Antes de anviar')" onreset="alert('Iniciou')">
+		<input type="reset">
+		
+		
+		-Os eventos mousedown, mouseup e click  (onmousedown, onmouseup e onclick)
+		Esses atributos podem ser utilizados em diversos elementos HTML. Por exemplo: p, div, table e img.
+		
+		 <p onmousedown ="console.log('down')"
+		  onmouseup ="console.log('up')"
+		  onclick ="console.log('click')">
+		  Exemplo dos eventos onmousedown, onmouseup e onclick
+		 </p>		
+		 
+		 
+		 - dblclick (ondblclick)
+		 O evento dblclick é disparado quando um determinado elemento recebe um duplo clique
+		 <p ondblclick ="console.log('clicou duas vezes')">
+		  Exemplo do evento para duplo clique!
+		 </p>
+		 
+		 
+		 -mousemove (onmousemove) é disparado quando o usuário passa mouse sobre determinado elemento
+		  Esse evento pode ser utilizado em diversos elementos HTML. Por exemplo: p, div, table e img
+		 <p onmousemove ="console.log('Movendo o mouse...')">
+		  Movendo o mouse...
+		 </p>
+		 
+		 
+		 -mouveover (onmouseover)
+		 O evento mouveover é disparado quando o ponteiro do mouse passa a estar sobre um deter-minado elemento.
+		 <p onmouseover ="console.log('onmouseover')">
+		  Evento mouveover
+		 </p> 
+		 
+		 
+		 -keydown, keypress e keyup (onkeydown, onkeypress e onkeyup)
+		 Os eventos keydown, keypress e keyup estão relacionados ao ato de pressionar uma tecla quando o foco está em um determinado elemento HTML
+		 ATENÇÃO O evento keypress não é disparado para teclas que não representam caracteres. Por exemplo, SHIFT, CTRL, ALT,SETAS entre outros.
+ 		 <p onkeydown ="console.log('down')"
+		  onkeypress ="console.log('press')"
+		  onkeyup ="console.log('up')">
+		  Exemplo dos eventos keydown, keypress e keyup
+		 </p>
+ 
+ 
+ 	 
+	 
+	 
+Métodos: addEventListener e removeEventListener
+
+Podemos definir os eventos programaticamente, usando para isto o método addEventListener, esse método recebe como parâmetro o evento a ser 
+tratado e a função a ser chamada, respectivamente.
+
+function click() {
+console.log("click");
+}
+var elemento = document.getElementById ("programando");
+elemento.addEventListener ("click", click );	 
+<p id="programando">
+	Evento adicionado pelo addEventListener
+</p> 
+		 
+
+Podemos usar funções anônimas quando usamos o addEventListener
+
+var elemento = document.getElementById("conteudo");
+elemento.addEventListener (
+"click",
+function () {
+console.log("click")
+}
+);
+
+Removendo o evento
+elemento.removeEventListener("click",click);
+
+
+Outra forma de deﬁnir programaticamente o tratamento dos eventos é utilizar as propriedades
+de evento dos objetos que representam os elementos HTML. Veja o exemplo a seguir.
+
+var paragrafo = document.getElementById("evento por elemento");
+paragrafo.onclick = function () {
+console.log ("click")
+};
+

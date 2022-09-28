@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<title>Eventos</title>	
+</head>
+</head>
+	<body onload="console.log('Carregou o body')" onscroll="console.log('Evento scroll')" >
+
+		
+ 
+ 
+ 		 <form id="formulario" action="index.html" onsubmit="return validaForm()">
+			<label for ="txtNome">Nome:</label>
+			<input id="txtNome" type="text" onfocus="console.log('Entrou no campo nome')" required />
+
+			<label for="txtEndereco">Endereco:</label>
+			<input id="txtEndereco"onchange="console.log('Saiu do endereço')" type="text" />
+			
+			<label for="txtMail">Email:</label>
+			<input id="txtMail" type="text" onblur="console.log('Saiu!!!')" onselect="console.log('Selecionou um texto')"/>			
+			<button   type="submit">Enviar</button> 
+			<input type="reset">
+
+			<textarea rows="10" onscroll="console.log('Scroll texto!')">
+			
+			</textarea>
+		</form>
+
+
+
+		<p id="par1" onclick="alert('Clicou!')">
+			Evento clique.
+		</p>
+
+		 
+	</body>
+	
+<script>
+	function validaForm() {
+
+		return false;
+	}
+
+</script>
+
+	
+</html>
